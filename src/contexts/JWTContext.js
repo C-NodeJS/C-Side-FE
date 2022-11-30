@@ -88,16 +88,17 @@ function AuthProvider({ children }) {
         initialize()
     }, [])
 
-    const login = async (emailOrPhoneNumber, password) => {
+    const login = async (email, password) => {
         try {
             const response = await axios.post(`${BE_SERVER}auth/login`, {
-                emailOrPhoneNumber,
+                email,
                 password,
             });
+
             const { access_token } = response.data;
-    
+
             setSession(access_token);
-            
+
             alert(LOGIN_SUCCESSFULLY)
             dispatch({
                 type: 'LOGIN',
@@ -116,8 +117,6 @@ function AuthProvider({ children }) {
                 },
             })
         }
-        
-
     }
 
     return (
