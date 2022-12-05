@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
+import { AppProvider } from "./context/app.context";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import ThemeCustomization from "./themes";
 import { AuthProvider } from './contexts/JWTContext';
@@ -9,9 +10,9 @@ import { AuthProvider } from './contexts/JWTContext';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeCustomization>
-    <AuthProvider>
+    <AppProvider>
       <App />
-    </AuthProvider>
+    </AppProvider>
   </ThemeCustomization>
 );
 

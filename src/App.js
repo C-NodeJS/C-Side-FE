@@ -1,18 +1,22 @@
-import "./App.css";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
+  BrowserRouter as Router, Navigate, Route, Routes
 } from "react-router-dom";
-import { Login } from "./pages";
+import "./App.css";
+import { RequireAuth } from "./components";
+import { Dashboard, HostAdmin, Login, ManagerAdmin, Signup } from "./pages";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to={"/login"} />} />
+        {/* <Route path="/" element={<Navigate to={"/dashboard"} />} /> */}
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/host/*" element={<HostAdmin />} />
+          <Route path="/manager/*" element={<ManagerAdmin />} />
+        </Route> */}
       </Routes>
     </Router>
   );
