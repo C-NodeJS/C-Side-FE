@@ -80,6 +80,9 @@ export default function Login() {
             }
         } catch (error) {
             console.log("error", error);
+
+            alert(error.response.data.message)
+            
             if (error.response.status_code === 9001) {
             }
         }
