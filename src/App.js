@@ -9,14 +9,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Navigate to={"/dashboard"} />} /> */}
+        <Route path="/" element={<Navigate to={"/dashboard"} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route element={<RequireAuth />}>
           <Route path="/host/*" element={<HostAdmin />} />
           <Route path="/manager/*" element={<ManagerAdmin />} />
-        </Route> */}
+        </Route>
       </Routes>
     </Router>
   );

@@ -5,7 +5,6 @@ import { AppProvider } from "./context/app.context";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import ThemeCustomization from "./themes";
-import { AuthProvider } from './contexts/JWTContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
