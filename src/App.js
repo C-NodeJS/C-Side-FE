@@ -5,7 +5,7 @@ import "./App.css";
 import { RequireAuth } from "./components";
 import RoleBasedGuard from "./guards/RoleBasedGuard";
 import { Client, Dashboard, HostAdmin, Login, ManagerAdmin, Signup } from "./pages";
-import { SYSTEM_ADMIN, HOST, CLIENT } from './constants/index';
+import { SYSTEM_ADMIN, HOST, CLIENT } from "./constants/index";
 
 function App() {
   return (

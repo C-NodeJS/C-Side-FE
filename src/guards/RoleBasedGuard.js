@@ -1,7 +1,7 @@
-import jwtDecode from 'jwt-decode';
-import PropTypes from 'prop-types';
-import { Container, Alert, AlertTitle, Typography, Button } from '@mui/material';
-import { getAccessTokenFromLS } from '../utils/auth';
+import jwtDecode from "jwt-decod";
+import PropTypes from "prop-types";
+import { Container, Alert, AlertTitle, Typography, Button } from "@mui/material";
+import { getAccessTokenFromLS } from "../utils/auth";
 
 RoleBasedGuard.propTypes = {
   accessibleRoles: PropTypes.array,

@@ -1,5 +1,5 @@
-import jwtDecode from 'jwt-decode';
-import { SYSTEM_ADMIN, HOST } from '../../constants/index';
+import jwtDecode from "jwt-decode";
+import { SYSTEM_ADMIN, HOST } from "../../constants/index";
 
 export const checkRole = (access_token, navigate) => {
     const { roleId } = jwtDecode(access_token);
