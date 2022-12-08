@@ -3,14 +3,16 @@ import React from "react";
 import { authAPI } from "../../services/auth.api";
 import { clearAccessTokenFromLS } from "../../utils/auth";
 
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function ManagerAdmin() {
     const navigate = useNavigate();
+
     const handleLogout = async () => {
         // await authAPI.logout();
         clearAccessTokenFromLS();
         return navigate("/login", { replace: true });
     };
+
     return (
         <div>
             ManagerAdmin
