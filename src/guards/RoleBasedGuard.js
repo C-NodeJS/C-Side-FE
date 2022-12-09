@@ -1,4 +1,4 @@
-import jwtDecode from "jwt-decod";
+import jwtDecode from "jwt-decode";
 import PropTypes from "prop-types";
 import { Container, Alert, AlertTitle, Typography, Button } from "@mui/material";
 import { getAccessTokenFromLS } from "../utils/auth";
