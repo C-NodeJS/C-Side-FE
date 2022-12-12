@@ -35,11 +35,21 @@ import { checkRole } from "../../utils/helpers/checkRole.helpers";
 const schema = yup.object({
   email: yup
     .string()
+    .max(15, "Email length must be less than 15 characters")
     .email("Email must be a valid email")
     .required("Email is required"),
-  password: yup.string().required("Password is required"),
-  firstName: yup.string().required("First name is required"),
-  lastName: yup.string().required("Last name is required"),
+  password: yup
+    .string()
+    .max(15, "Password length must be less than 15 characters")
+    .required("Password is required"),
+  firstName: yup
+    .string()
+    .max(15, "First name length must be less than 15 characters")
+    .required("First name is required"),
+  lastName: yup
+    .string()
+    .max(15, "Last name length must be less than 15 characters")
+    .required("Last name is required"),
 });
 
 function TabPanel(props) {
@@ -114,7 +124,7 @@ export default function Signup() {
     marginTop: "10px",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   };
 
   const IconCircle = styled(Stack)(({ theme }) => ({
