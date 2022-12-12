@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import { clearAccessTokenFromLS } from "../../utils/auth";
 import { useNavigate, Navigate } from "react-router-dom";
+import Sidebar from "../../layouts/AdminDashboardLayout/Sidebar";
 
 export default function HostAdmin() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function HostAdmin() {
   return (
     <div>
       Host Admin
+      <Sidebar />
       <Button
         sx={{
           textTransform: "capitalize",
