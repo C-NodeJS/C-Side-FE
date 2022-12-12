@@ -30,6 +30,7 @@ import { FaIcon, FormInput } from "../../components";
 import { useAuth } from "../../hook";
 import { authAPI } from "../../services/auth.api";
 import { CLIENT, HOST } from "../../constants";
+import { checkRole } from "../../utils/helpers/checkRole.helpers";
 
 const schema = yup.object({
   email: yup
@@ -39,7 +40,6 @@ const schema = yup.object({
   password: yup.string().required("Password is required"),
   firstName: yup.string().required("First name is required"),
   lastName: yup.string().required("Last name is required"),
-  roleId: yup.number().required("Last name is required"),
 });
 
 function TabPanel(props) {
@@ -67,7 +67,6 @@ export default function Signup() {
       password: "",
       firstName: "",
       lastName: "",
-      roleId: CLIENT,
     },
     resolver: yupResolver(schema),
   });
@@ -91,11 +90,14 @@ export default function Signup() {
     try {
       const res = await authAPI.register({
         ...data,
+        roleId: role,
         name: `${data.firstName} ${data.lastName}`,
       });
       if (res.status === 201) {
-        setIsAuthenticate(Boolean(res.data?.access_token));
-        setAccessTokenToLS(res.data?.access_token);
+        setIsAuthenticate(Boolean(res.data.response?.access_token));
+        setAccessTokenToLS(res.data.response?.access_token);
+        // checkRole(res.data.response?.access_token, navigate);
+
         navigate("/", { replace: true });
       }
     } catch (error) {
@@ -240,7 +242,6 @@ export default function Signup() {
               id="demo-simple-select"
               fullWidth
               value={role}
-              name="roleId"
               onChange={handleRoleChange}
             >
               <MenuItem value={HOST}>Host</MenuItem>

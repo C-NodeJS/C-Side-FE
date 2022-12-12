@@ -18,8 +18,8 @@ export const authAPI = {
   login: ({ email, password }) => {
     return http.post("auth/login", { email, password });
   },
-  register: ({ email, password, name, phone = '', address = '' }) => {
-    return http.post("auth/register", { email, password, name, phone, address });
+  register: ({ email, password, name, phone = '', address = '', roleId }) => {
+    return http.post("auth/register", { email, password, name, phone, address, roleId });
   },
   logout: () => {
     return http.post("auth/logout");
