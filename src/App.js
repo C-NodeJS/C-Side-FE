@@ -7,6 +7,7 @@ import {
 import "./App.css";
 import { RequireAuth } from "./components";
 import {
+  Client,
   Dashboard,
   HostAdmin,
   Login,
@@ -26,30 +27,32 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/managerroom" element={<ManagerRoom />} />
-        <Route path="/host" element={<RoleBasedGuard 
-          accessibleRoles={[SYSTEM_ADMIN]}
-        >
-          <HostAdmin />
-          </RoleBasedGuard>}>
-        </Route>
+        <Route
+          path="/host"
+          element={
+            <RoleBasedGuard accessibleRoles={[SYSTEM_ADMIN]}>
+              <HostAdmin />
+            </RoleBasedGuard>
+          }
+        ></Route>
 
-        <Route path="/manager" element={<RoleBasedGuard
-            accessibleRoles={[HOST]}
-          >
-            <ManagerAdmin />
-          </RoleBasedGuard>
-        }>
-        </Route>
+        <Route
+          path="/manager"
+          element={
+            <RoleBasedGuard accessibleRoles={[HOST]}>
+              <ManagerAdmin />
+            </RoleBasedGuard>
+          }
+        ></Route>
 
-        <Route path="/client" element={
-          <RoleBasedGuard
-            accessibleRoles={[CLIENT]}
-          >
-            <Client />
-          </RoleBasedGuard>
-        }>
-        </Route>
-
+        <Route
+          path="/client"
+          element={
+            <RoleBasedGuard accessibleRoles={[CLIENT]}>
+              <Client />
+            </RoleBasedGuard>
+          }
+        ></Route>
       </Routes>
     </Router>
   );
