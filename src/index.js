@@ -5,12 +5,15 @@ import { AppProvider } from "./context/app.context";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import ThemeCustomization from "./themes";
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeCustomization>
     <AppProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </AppProvider>
   </ThemeCustomization>
 );
