@@ -6,14 +6,14 @@ const rooms = {
       id: 'list',
       title: 'List Rooms',
       type: '',
-      url: '',
+      url: '/admin/rooms/getAlls',
     },
-    {
-      id: 'list',
-      title: 'Unknown',
-      type: '',
-      url: '',
-    }
+    // {
+    //   id: 'list',
+    //   title: 'Unknown',
+    //   type: '',
+    //   url: '',
+    // }
   ]
 }
 

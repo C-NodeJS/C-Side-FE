@@ -14,7 +14,7 @@ const PublicRoutes =
       element: <Signup />,
     },
     {
-      path: '',
+      path: 'dashboard',
       element: <Dashboard />,
     },
   ]
