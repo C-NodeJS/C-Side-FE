@@ -6,16 +6,21 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import ThemeCustomization from "./themes";
 import { BrowserRouter } from 'react-router-dom';
+import { store, persistor } from './redux/store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ThemeCustomization>
+  <Provider store={store}>
+    <ThemeCustomization>
     <AppProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </AppProvider>
   </ThemeCustomization>
+  </Provider>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
