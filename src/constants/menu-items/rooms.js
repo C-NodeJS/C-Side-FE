@@ -8,12 +8,12 @@ const rooms = {
       type: '',
       url: '/admin/rooms/getAlls',
     },
-    // {
-    //   id: 'list',
-    //   title: 'Unknown',
-    //   type: '',
-    //   url: '',
-    // }
+    {
+      id: 'pendingRooms',
+      title: 'Pending Rooms',
+      type: '',
+      url: '/admin/rooms/pendingRooms',
+    }
   ]
 }
 

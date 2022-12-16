@@ -16,6 +16,7 @@ export const authAPI = {
     }
   },
   login: ({ email, password }) => {
+    console.log("🚀 ~ file: auth.api.js:19 ~ email", email)
     return http.post("auth/login", { email, password });
   },
   register: ({ email, password, name, phone = '', address = '' }) => {
