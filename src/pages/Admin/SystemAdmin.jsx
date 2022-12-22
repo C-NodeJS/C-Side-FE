@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { clearAccessTokenFromLS } from "../../utils/auth";
 import { useNavigate, Navigate } from "react-router-dom";
 
-export default function HostAdmin() {
+export default function SystemAdmin() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -14,7 +14,7 @@ export default function HostAdmin() {
 
   return (
     <div>
-      Host Admin
+      System Admin
       <Button
         sx={{
           textTransform: "capitalize",

@@ -4,7 +4,7 @@ import { authAPI } from "../../services/auth.api";
 import { clearAccessTokenFromLS } from "../../utils/auth";
 
 import { useNavigate } from "react-router-dom";
-export default function ManagerAdmin() {
+export default function Host() {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -15,7 +15,7 @@ export default function ManagerAdmin() {
 
     return (
         <div>
-            ManagerAdmin
+            Host
             <Button
                 sx={{
                     textTransform: "capitalize",

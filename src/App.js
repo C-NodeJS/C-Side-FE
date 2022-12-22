@@ -4,7 +4,7 @@ import {
 import "./App.css";
 import { RequireAuth } from "./components";
 import RoleBasedGuard from "./guards/RoleBasedGuard";
-import { Client, Dashboard, HostAdmin, Login, ManagerAdmin, Signup } from "./pages";
+import { Client, Dashboard, Login, Signup, SystemAdmin, Host } from "./pages";
 import { SYSTEM_ADMIN, HOST, CLIENT } from "./constants/index";
 
 function App() {
@@ -19,14 +19,14 @@ function App() {
         <Route path="/host" element={<RoleBasedGuard 
           accessibleRoles={[SYSTEM_ADMIN]}
         >
-          <HostAdmin />
+          <SystemAdmin />
           </RoleBasedGuard>}>
         </Route>
 
         <Route path="/manager" element={<RoleBasedGuard
             accessibleRoles={[HOST]}
           >
-            <ManagerAdmin />
+            <Host />
           </RoleBasedGuard>
         }>
         </Route>
